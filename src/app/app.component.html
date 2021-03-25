@@ -1,0 +1,36 @@
+<header >
+  <h1 class="title">RESULTS</h1>
+</header>
+<div class="main">
+  <aside>
+    <img [src]=student.student_photo alt="{{ student.student_name }}'s Portrait" class="circle portrait" />
+    <div class="student_details">
+      <p class="student_name">{{ student.student_name}}</p>
+      <p class="student_admission_number">Adm: {{ student.student_admission_number }}</p>
+      <p class="class_number">Class: {{ student.class_name }}</p>
+    </div>
+  </aside>
+  
+  <div class="summary">
+    <h2>SUMMARY</h2>
+    <div class="stats"> 
+      <app-score [means]=means [title]="titleScore"></app-score>
+      <app-position [pos]=overallPos [title]="titleOverallPos"></app-position>
+    </div>
+  </div>
+  <main>
+    <h2 class="examp_title">{{ examdata.exam_name }}</h2>
+    <div class="subject_results" *ngFor="let subject of subjects">
+      <div class="subject">
+        <app-subject-result [data]=subject></app-subject-result>
+      </div>
+    </div>
+    <p>Class Teacher's Remarks <mat-icon>play_circle_filled</mat-icon></p>
+    <p>
+      Principal's Remarks
+      <mat-icon>play_circle_filled</mat-icon></p>
+  </main>
+</div>
+<footer>
+  <h2>PREVIOUS EXAMS</h2>
+</footer>

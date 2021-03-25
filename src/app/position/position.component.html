@@ -1,0 +1,23 @@
+<div class="circle">
+   <p class="rank">
+    <sup>{{ pos.position }}</sup>&frasl;<sub>{{ pos.position_out_of }}</sub>
+   </p>
+
+   <div class="deviation">
+      
+    <ng-container *ngIf="pos.deviation<0; else elseTemplate">
+        <mat-icon class="red">arrow_downward</mat-icon>
+        <span class="red">
+            {{ pos.deviation }}
+        </span>
+      </ng-container>
+      <ng-template #elseTemplate>
+        <mat-icon class="green">arrow_upward</mat-icon>
+        <span class="green">
+            {{ pos.deviation }} 
+          </span>
+        
+      </ng-template>
+   </div>
+</div>
+<p class="title">{{ title }}</p>

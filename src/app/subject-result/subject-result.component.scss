@@ -1,0 +1,46 @@
+@import './../variables';
+
+td{
+  text-align: center;
+  padding:0 0.1em;
+}
+table,td{
+  border: solid black 3px;
+  font-weight: 700;
+  font-size: 1.1em;
+  
+}
+
+table{
+  background-color:white;
+  width: 100%;
+  border-collapse: collapse;
+
+  tbody{
+    td{
+
+      &.score{
+        min-width: 20px;
+        border-right: none;
+      }
+      &.grade{
+        min-width: 30px;
+        border-left: none;
+        color: $zeraki_blue;
+      }
+      &.rank{
+        min-width: 50px;
+      }
+      &.dev{
+        min-width: 30px;
+      }
+      &.comment{
+        min-width: 10px;
+      }
+    }
+
+    mat-icon{
+      margin: 9px;
+    }
+  }
+}

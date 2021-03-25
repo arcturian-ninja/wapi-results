@@ -1,0 +1,25 @@
+<table class="subject">
+  <thead>
+    <tr>
+      <th colspan="5">{{ data.subject_name }}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="score">{{ data.score }}%</td>
+      <td class="grade ">({{ data.grade }})</td>
+      <td class="rank">{{ data.rank}} / {{ data.rank_out_of }}</td>
+      <td class="dev">
+        {{ data.deviation }}  
+        <!-- Indicator arrow illustration for deviation direction -->
+        <ng-container *ngIf="data.deviation<0; else elseTemplate">
+          <mat-icon class="red">arrow_downward</mat-icon>
+        </ng-container>
+        <ng-template #elseTemplate>
+          <mat-icon class="green">arrow_upward</mat-icon>  
+        </ng-template>
+      </td>
+      <td class="comment"><mat-icon>play_circle_filled</mat-icon></td>
+    </tr>
+  </tbody>
+</table>

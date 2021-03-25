@@ -1,0 +1,17 @@
+<div class="circle">
+    <p class="top">
+        <span class="dev">{{ marks }}%
+            <ng-container *ngIf="true; else elseTemplate">
+                <mat-icon class="red">arrow_downward</mat-icon>
+                <span class="red">{{ dev }}</span>
+            </ng-container>
+              <ng-template #elseTemplate>
+                <mat-icon class="green">arrow_upward</mat-icon>  
+                <span class="green">{{ dev }}</span>
+            </ng-template>
+              
+        </span></p>
+    <hr class="divider"><!-- shift downwards -->
+    <p class="bottom">{{ meanGrade }}</p>
+</div>
+<p class="title">{{ title }}</p>

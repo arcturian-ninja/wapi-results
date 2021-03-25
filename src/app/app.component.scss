@@ -1,0 +1,105 @@
+@import "_variables";
+@import "./mixins";
+
+header,
+main,
+aside,
+footer {
+  display: flex;
+  margin-bottom: 0.7em;
+  justify-content: center;
+}
+
+header {
+  min-height: 3vh;
+}
+
+aside {
+  min-height: 13vh;
+  border-radius: 3em;
+  align-items: center;
+
+  > .portrait {
+    padding-right: 1em;
+    max-height: 13vh;
+  }
+  > .student_details {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    > p {
+      margin: 0;
+      font-size: larger;
+    }
+  }
+}
+
+main {
+  @include box;
+  flex-direction: column;
+  justify-content: flex-start;
+  text-align: center;
+  
+  .subject_results {
+    margin: 0.2em;
+    > *{
+      margin: 0.4em 0em;
+    }
+  }
+}
+.summary {
+  margin: 0.3em auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  @include box;
+  
+  h2{
+    width: 100%;
+    text-align: center;
+  }
+    
+  .stats {
+    padding: 1em;
+    display: flex;
+    justify-content: space-around;
+  }
+}
+
+@media(min-width:1024px) {
+  
+  .main{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+
+    main{
+      width: 50%;
+    }
+    
+    aside{
+      @include box;
+      width: 30%;
+      height: 300px;
+      flex-direction: column;
+
+      .portrait{
+        max-height: 50%;
+
+        &.circle{
+          border-radius: unset;
+        }
+      }
+    }
+
+    
+    .summary {
+      margin: unset;
+      height: 300px;
+      
+      width: 30%;
+    }
+  }
+}
